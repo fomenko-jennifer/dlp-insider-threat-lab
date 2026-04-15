@@ -1,0 +1,183 @@
+# XYZ Bank DLP Policy Ruleset
+# Maintained by: DLP/ITM Team
+# Last reviewed: Feb 12 2026
+
+email_policies:
+
+  - rule_id: DLP-EMAIL-001
+    name: PII in Outbound Email
+    channel: email
+    direction: outbound
+    trigger:
+      content_patterns:
+        - type: regex
+          pattern: '\b\d{3}-\d{2}-\d{4}\b'
+          label: SSN
+        - type: regex
+          pattern: '\b\d{9,12}\b'
+          label: Account Number
+      scope: [body, subject, attachments]
+    classification: Restricted
+    severity: High
+    action: block_and_notify
+    notify: [sender, sender_manager, dlp_team]
+    exceptions:
+      - condition: recipient_domain in approved_partners
+        action: encrypt_and_allow
+      - condition: sender in hr_benefits_dl
+        action: alert_only
+        reason: "HR benefit forms contain SSNs by business necessity"
+    false_positive_notes: >
+      HR onboarding emails frequently trigger this rule.
+      Added HR-Benefits DL exception Jan 2025 — reduced FP by 40%.
+    tuning_history:
+      - date: "2025-01-15"
+        change: "Added attachment scope — caught exfil via PDF attachments"
+
+  - rule_id: DLP-EMAIL-002
+    name: Large Attachment to External Recipient
+    channel: email
+    direction: outbound
+    trigger:
+      attachment_size_mb: "> 10"
+      recipient: external
+    classification: any
+    severity: Medium
+    action: alert_and_log
+    notify: [dlp_team]
+    exceptions:
+      - condition: recipient_domain in approved_partners
+      - condition: file_encrypted = true
+    false_positive_notes: >
+      Sales team regularly sends large proposals. Consider
+      per-department threshold or approved recipient list.
+
+  - rule_id: DLP-EMAIL-003
+    name: Encrypted Archive to External (Evasion Attempt)
+    channel: email
+    direction: outbound
+    trigger:
+      file_type: [.zip, .7z, .rar]
+      file_encrypted: true
+      recipient: external
+    classification: any
+    severity: High
+    action: quarantine_and_alert
+    notify: [dlp_team, soc]
+    exceptions: none
+    false_positive_notes: >
+      Password-protected zips to external recipients are a known
+      DLP evasion technique. No automatic exceptions — manual review required.
+
+endpoint_policies:
+
+  - rule_id: DLP-EP-001
+    name: USB Copy of Classified Data
+    channel: endpoint
+    trigger:
+      action: file_copy
+      destination: removable_media
+      classification: [Confidential, Restricted]
+    severity: High
+    action: block_and_alert
+    notify: [user, user_manager, dlp_team]
+    exceptions:
+      - condition: user in approved_usb_users
+        requires: manager_approval_ticket
+        expiry: 30_days
+
+  - rule_id: DLP-EP-002
+    name: Bulk File Download to Local Drive
+    channel: endpoint
+    trigger:
+      action: file_download
+      count_threshold: "> 50 files in 1 hour"
+      source: [SharePoint, OneDrive, network_share]
+    classification: any
+    severity: Medium
+    action: alert_and_log
+    notify: [dlp_team]
+    false_positive_notes: >
+      New employees syncing OneDrive trigger this frequently.
+      Consider 7-day grace period for new hire accounts.
+
+  - rule_id: DLP-EP-003
+    name: Print of Restricted Data
+    channel: endpoint
+    trigger:
+      action: print
+      classification: Restricted
+    severity: Medium
+    action: alert_and_log
+    notify: [user_manager, dlp_team]
+    exceptions:
+      - condition: printer in secure_print_room
+
+  - rule_id: DLP-EP-004
+    name: Screen Capture of Restricted Application
+    channel: endpoint
+    trigger:
+      action: screen_capture
+      application: [core_banking_app, hr_system, trading_platform]
+    severity: High
+    action: block_and_alert
+    notify: [dlp_team, soc]
+
+cloud_policies:
+
+  - rule_id: DLP-CLOUD-001
+    name: Upload to Unsanctioned Cloud Storage
+    channel: cloud
+    trigger:
+      action: upload
+      destination_app: not_in_sanctioned_list
+      # Sanctioned: OneDrive, SharePoint, Box (corporate)
+      # Unsanctioned: Google Drive personal, Dropbox, WeTransfer, etc.
+    classification: [Internal, Confidential, Restricted]
+    severity: High
+    action: block
+    notify: [user, dlp_team]
+    casb_integration: >
+      CASB inline proxy blocks upload in real-time.
+      CASB API scans retroactively for sanctioned apps.
+
+  - rule_id: DLP-CLOUD-002
+    name: External Sharing from Sanctioned Cloud App
+    channel: cloud
+    trigger:
+      action: share_external
+      source_app: [OneDrive, SharePoint, Box]
+      classification: [Confidential, Restricted]
+    severity: Medium
+    action: alert_and_restrict
+    notify: [user, user_manager]
+    exceptions:
+      - condition: recipient in approved_external_collaborators
+
+  - rule_id: DLP-CLOUD-003
+    name: Bulk Download from Cloud (Data Staging)
+    channel: cloud
+    trigger:
+      action: download
+      volume: "> 100MB in 30 minutes"
+      source_app: [SharePoint, OneDrive]
+    classification: any
+    severity: High
+    action: alert_and_log
+    notify: [dlp_team, itm_team]
+    itm_correlation: >
+      Cross-reference with HR for departing employees.
+      Bulk download + resignation notice = Critical escalation.
+
+  - rule_id: DLP-CLOUD-004
+    name: OAuth Token Grant to Unvetted Third-Party App
+    channel: cloud
+    trigger:
+      action: oauth_consent
+      app_risk_score: "> 7"
+      permissions_requested: [read_all_files, send_mail]
+    severity: High
+    action: block_and_revoke
+    notify: [user, dlp_team, soc]
+    casb_integration: CASB app governance module
+RULES

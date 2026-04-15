@@ -1,0 +1,46 @@
+timestamp,event_id,user_id,user_name,department,privileged,channel,rule_id,severity,classification,action_taken,source_app,destination,file_type,file_size_mb,data_pattern_matched,business_hours,investigation_status
+2025-01-15T21:45:00,EVT-J01,USR-007,Jake Torres,Sales,false,cloud,DLP-CLOUD-003,Medium,Confidential,alert,SharePoint,local_drive,.xlsx,8.2,PII_Name_Address,false,open
+2025-01-16T22:12:00,EVT-J02,USR-007,Jake Torres,Sales,false,endpoint,DLP-EP-001,High,Confidential,block,OneDrive,usb_drive,.xlsx,8.2,PII_Name_Address,false,open
+2025-01-16T22:30:00,EVT-J03,USR-007,Jake Torres,Sales,false,endpoint,DLP-EP-001,High,Confidential,block,OneDrive,usb_drive,.pdf,3.1,Financial_Report,false,open
+2025-01-17T08:05:00,EVT-J04,USR-007,Jake Torres,Sales,false,email,DLP-EMAIL-003,High,Confidential,quarantine,Outlook,external_email,.zip,11.4,None,true,open
+2025-01-17T11:22:00,EVT-J05,USR-007,Jake Torres,Sales,false,cloud,DLP-CLOUD-001,High,Confidential,block,Chrome,personal_cloud,.csv,4.7,PII_Name_Address,true,open
+2025-01-17T11:45:00,EVT-J06,USR-007,Jake Torres,Sales,false,cloud,DLP-CLOUD-001,High,Confidential,block,Chrome,personal_cloud,.xlsx,6.3,Financial_Report,true,open
+2025-01-17T17:40:00,EVT-J07,USR-007,Jake Torres,Sales,false,email,DLP-EMAIL-001,High,Confidential,block,Outlook,external_email,.xlsx,2.1,PII_Name_Address,true,open
+2025-01-17T17:58:00,EVT-J08,USR-007,Jake Torres,Sales,false,endpoint,DLP-EP-004,High,Confidential,block,core_banking_app,sanctioned_cloud,.png,0.3,None,true,escalated
+2025-01-03T09:15:00,EVT-M01,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.xlsx,2.4,Account_Number,true,closed
+2025-01-03T09:22:00,EVT-M02,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Confidential,alert,Outlook,external_email,.pdf,1.1,Financial_Report,true,closed
+2025-01-06T10:30:00,EVT-M03,USR-012,Maria Santos,Finance,false,cloud,DLP-CLOUD-002,Medium,Confidential,alert,SharePoint,sanctioned_cloud,.xlsx,5.8,Financial_Report,true,closed
+2025-01-06T13:45:00,EVT-M04,USR-012,Maria Santos,Finance,false,endpoint,DLP-EP-002,Medium,Confidential,alert,SharePoint,local_drive,.pdf,12.3,Financial_Report,true,closed
+2025-01-08T14:20:00,EVT-M05,USR-012,Maria Santos,Finance,false,endpoint,DLP-EP-003,Medium,Restricted,alert,core_banking_app,printer,.pdf,0.8,Account_Number,true,closed
+2025-01-10T09:05:00,EVT-M06,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.xlsx,3.2,Account_Number,true,closed
+2025-01-10T09:12:00,EVT-M07,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.csv,1.8,SSN,true,closed
+2025-01-14T11:00:00,EVT-M08,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-002,Medium,Confidential,alert,Outlook,external_email,.xlsx,14.6,Financial_Report,true,closed
+2025-01-17T08:30:00,EVT-M09,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.pdf,2.0,Account_Number,true,closed
+2025-01-21T10:15:00,EVT-M10,USR-012,Maria Santos,Finance,false,cloud,DLP-CLOUD-002,Medium,Confidential,alert,SharePoint,sanctioned_cloud,.xlsx,7.1,Financial_Report,true,closed
+2025-01-22T15:30:00,EVT-M11,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.xlsx,2.9,Account_Number,true,closed
+2025-01-27T09:45:00,EVT-M12,USR-012,Maria Santos,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.pdf,1.5,SSN,true,closed
+2025-01-29T16:10:00,EVT-M13,USR-012,Maria Santos,Finance,false,endpoint,DLP-EP-002,Medium,Confidential,alert,SharePoint,local_drive,.xlsx,9.4,Financial_Report,true,closed
+2025-01-07T10:00:00,EVT-D01,USR-003,David Kim,IT,true,cloud,DLP-CLOUD-002,Low,Internal,alert,SharePoint,sanctioned_cloud,.docx,0.4,None,true,closed
+2025-01-20T14:15:00,EVT-D02,USR-003,David Kim,IT,true,endpoint,DLP-EP-002,High,Confidential,alert,SharePoint,local_drive,.xlsx,18.7,PII_Name_Address,true,open
+2025-01-20T14:40:00,EVT-D03,USR-003,David Kim,IT,true,endpoint,DLP-EP-001,High,Restricted,block,SharePoint,usb_drive,.xlsx,18.7,SSN,true,open
+2025-01-20T15:05:00,EVT-D04,USR-003,David Kim,IT,true,cloud,DLP-CLOUD-001,High,Restricted,block,Chrome,personal_cloud,.csv,5.2,SSN,true,open
+2025-01-20T15:30:00,EVT-D05,USR-003,David Kim,IT,true,email,DLP-EMAIL-001,High,Restricted,block,Outlook,external_email,.xlsx,18.7,SSN,true,escalated
+2025-01-09T11:30:00,EVT-P01,USR-028,Priya Patel,Engineering,false,cloud,DLP-CLOUD-002,Low,Internal,alert,SharePoint,sanctioned_cloud,.docx,1.2,None,true,closed
+2025-01-16T14:00:00,EVT-P02,USR-028,Priya Patel,Engineering,false,email,DLP-EMAIL-002,Low,Internal,alert,Outlook,external_email,.zip,8.5,Source_Code,true,closed
+2025-01-24T10:45:00,EVT-P03,USR-028,Priya Patel,Engineering,false,cloud,DLP-CLOUD-002,Low,Confidential,alert,OneDrive,sanctioned_cloud,.pdf,0.6,None,true,closed
+2025-01-02T08:45:00,EVT-B01,USR-015,Sarah Chen,HR,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.pdf,1.3,SSN,true,closed
+2025-01-05T13:20:00,EVT-B02,USR-022,Tom Bradley,Sales,false,email,DLP-EMAIL-002,Low,Internal,alert,Outlook,external_email,.pptx,22.0,None,true,closed
+2025-01-08T09:10:00,EVT-B03,USR-031,Angela Rivera,HR,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.xlsx,1.9,SSN,true,closed
+2025-01-10T16:45:00,EVT-B04,USR-019,James Morton,Engineering,false,cloud,DLP-CLOUD-002,Low,Internal,alert,OneDrive,sanctioned_cloud,.docx,0.3,None,true,closed
+2025-01-12T11:30:00,EVT-B05,USR-041,Lisa Park,Finance,false,email,DLP-EMAIL-001,Medium,Confidential,alert,Outlook,external_email,.pdf,2.7,Financial_Report,true,closed
+2025-01-15T14:00:00,EVT-B06,USR-009,Mike Thompson,Sales,false,endpoint,DLP-EP-002,Low,Internal,alert,SharePoint,local_drive,.xlsx,4.1,None,true,closed
+2025-01-18T10:20:00,EVT-B07,USR-035,Rachel Kim,Executive,false,cloud,DLP-CLOUD-002,Medium,Confidential,alert,SharePoint,sanctioned_cloud,.pdf,3.4,Financial_Report,true,closed
+2025-01-20T08:55:00,EVT-B08,USR-015,Sarah Chen,HR,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.csv,0.9,SSN,true,closed
+2025-01-22T13:40:00,EVT-B09,USR-027,Carlos Mendez,IT,true,cloud,DLP-CLOUD-002,Low,Internal,alert,OneDrive,sanctioned_cloud,.docx,0.5,None,true,closed
+2025-01-25T09:30:00,EVT-B10,USR-044,Nina Walsh,Finance,false,email,DLP-EMAIL-001,Medium,Restricted,alert,Outlook,external_email,.xlsx,3.1,Account_Number,true,closed
+2025-01-28T15:15:00,EVT-B11,USR-022,Tom Bradley,Sales,false,email,DLP-EMAIL-002,Low,Confidential,alert,Outlook,external_email,.pdf,11.8,Financial_Report,true,closed
+2025-01-30T12:00:00,EVT-B12,USR-031,Angela Rivera,HR,false,endpoint,DLP-EP-003,Medium,Restricted,alert,core_banking_app,printer,.pdf,0.4,SSN,true,closed
+
+
+
+
