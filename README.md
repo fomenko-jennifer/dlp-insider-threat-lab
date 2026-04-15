@@ -47,7 +47,7 @@ January 2025 was the baseline month: 41 events, 13 unique users, two escalations
 
 The most significant case in this dataset involves a Sales Representative who submitted his resignation and then generated 8 high-severity events across 3 days, more than a typical sales employee produces in 1-2 months.
 
-![Jake Torres Investigation Timeline](images/torres_timeline.svg)
+![Jake Torres Investigation Timeline](torres_timeline.svg)
 
 **Day 1 (Jan 15):** Downloaded a client list from SharePoint after hours. Rule fired an alert but did not block.
 
