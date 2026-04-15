@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="430" y="38" text-anchor="middle" font-size="17" font-weight="bold" fill="#e6edf3">USR-007 Jake Torres: Insider Threat Investigation Timeline</text>
+  <text x="430" y="58" text-anchor="middle" font-size="12" fill="#8b949e">Sales Representative | Resignation on file | Jan 15-17, 2025</text>
+
+  <!-- Day column headers -->
+  <!-- Day 1 -->
+  <rect x="40" y="75" width="240" height="32" rx="6" fill="#1f3a5f"/>
+  <text x="160" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#79c0ff">Day 1 — January 15</text>
+
+  <!-- Day 2 -->
+  <rect x="310" y="75" width="240" height="32" rx="6" fill="#3a1f1f"/>
+  <text x="430" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#ff7b72">Day 2 — January 16</text>
+
+  <!-- Day 3 -->
+  <rect x="580" y="75" width="240" height="32" rx="6" fill="#3a1f1f"/>
+  <text x="700" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#ff7b72">Day 3 — January 17</text>
+
+  <!-- Vertical connector line -->
+  <line x1="160" y1="107" x2="160" y2="420" stroke="#30363d" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="430" y1="107" x2="430" y2="420" stroke="#30363d" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="700" y1="107" x2="700" y2="420" stroke="#30363d" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- ── DAY 1 EVENT ── -->
+  <!-- EVT-J01 -->
+  <circle cx="160" cy="140" r="7" fill="#d29922"/>
+  <rect x="50" y="153" width="220" height="62" rx="5" fill="#161b22" stroke="#d29922" stroke-width="1.2"/>
+  <text x="160" y="169" text-anchor="middle" font-size="10" fill="#8b949e">9:45 PM · Cloud · DLP-CLOUD-003</text>
+  <text x="160" y="184" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">Client list downloaded</text>
+  <text x="160" y="198" text-anchor="middle" font-size="11" fill="#e6edf3">from SharePoint</text>
+  <rect x="108" y="206" width="104" height="18" rx="9" fill="#2a2010"/>
+  <text x="160" y="219" text-anchor="middle" font-size="10" font-weight="bold" fill="#d29922">⚠ ALERT — not blocked</text>
+
+  <!-- After-hours badge day 1 -->
+  <rect x="88" y="228" width="144" height="16" rx="4" fill="#1a1a2e"/>
+  <text x="160" y="240" text-anchor="middle" font-size="10" fill="#a371f7">🌙 After hours</text>
+
+  <!-- ── DAY 2 EVENTS ── -->
+  <!-- EVT-J02 -->
+  <circle cx="430" cy="140" r="7" fill="#f85149"/>
+  <rect x="320" y="153" width="220" height="62" rx="5" fill="#161b22" stroke="#f85149" stroke-width="1.2"/>
+  <text x="430" y="169" text-anchor="middle" font-size="10" fill="#8b949e">10:12 PM · Endpoint · DLP-EP-001</text>
+  <text x="430" y="184" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">USB copy: client list</text>
+  <text x="430" y="198" text-anchor="middle" font-size="11" fill="#e6edf3">(.xlsx, 8.2 MB)</text>
+  <rect x="378" y="206" width="104" height="18" rx="9" fill="#2a1010"/>
+  <text x="430" y="219" text-anchor="middle" font-size="10" font-weight="bold" fill="#f85149">✕ BLOCKED</text>
+
+  <!-- EVT-J03 -->
+  <circle cx="430" cy="260" r="7" fill="#f85149"/>
+  <rect x="320" y="273" width="220" height="62" rx="5" fill="#161b22" stroke="#f85149" stroke-width="1.2"/>
+  <text x="430" y="289" text-anchor="middle" font-size="10" fill="#8b949e">10:30 PM · Endpoint · DLP-EP-001</text>
+  <text x="430" y="304" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">USB copy: sales pipeline</text>
+  <text x="430" y="318" text-anchor="middle" font-size="11" fill="#e6edf3">report (.pdf, 3.1 MB)</text>
+  <rect x="378" y="326" width="104" height="18" rx="9" fill="#2a1010"/>
+  <text x="430" y="339" text-anchor="middle" font-size="10" font-weight="bold" fill="#f85149">✕ BLOCKED</text>
+
+  <!-- After-hours badge day 2 -->
+  <rect x="358" y="348" width="144" height="16" rx="4" fill="#1a1a2e"/>
+  <text x="430" y="360" text-anchor="middle" font-size="10" fill="#a371f7">🌙 After hours · channel hop</text>
+
+  <!-- ── DAY 3 EVENTS ── -->
+  <!-- EVT-J04 -->
+  <circle cx="700" cy="125" r="7" fill="#f85149"/>
+  <rect x="590" y="138" width="220" height="56" rx="5" fill="#161b22" stroke="#f85149" stroke-width="1.2"/>
+  <text x="700" y="153" text-anchor="middle" font-size="10" fill="#8b949e">8:05 AM · Email · DLP-EMAIL-003</text>
+  <text x="700" y="168" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">Encrypted .zip to personal</text>
+  <text x="700" y="182" text-anchor="middle" font-size="11" fill="#e6edf3">email (11.4 MB)</text>
+  <rect x="635" y="190" width="130" height="18" rx="9" fill="#1a2a10"/>
+  <text x="700" y="203" text-anchor="middle" font-size="10" font-weight="bold" fill="#56d364">⏸ QUARANTINED</text>
+
+  <!-- EVT-J05 + J06 -->
+  <circle cx="700" cy="228" r="7" fill="#f85149"/>
+  <rect x="590" y="241" width="220" height="62" rx="5" fill="#161b22" stroke="#f85149" stroke-width="1.2"/>
+  <text x="700" y="257" text-anchor="middle" font-size="10" fill="#8b949e">11:22–11:45 AM · Cloud · DLP-CLOUD-001</text>
+  <text x="700" y="272" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">2x uploads to personal</text>
+  <text x="700" y="286" text-anchor="middle" font-size="11" fill="#e6edf3">Google Drive</text>
+  <rect x="648" y="294" width="104" height="18" rx="9" fill="#2a1010"/>
+  <text x="700" y="307" text-anchor="middle" font-size="10" font-weight="bold" fill="#f85149">✕ BLOCKED</text>
+
+  <!-- EVT-J07 + J08 -->
+  <circle cx="700" cy="332" r="7" fill="#f85149"/>
+  <rect x="590" y="345" width="220" height="62" rx="5" fill="#161b22" stroke="#f85149" stroke-width="1.2"/>
+  <text x="700" y="361" text-anchor="middle" font-size="10" fill="#8b949e">5:40–5:58 PM · Email + Endpoint</text>
+  <text x="700" y="376" text-anchor="middle" font-size="11" font-weight="bold" fill="#e6edf3">External email + screenshot</text>
+  <text x="700" y="390" text-anchor="middle" font-size="11" fill="#e6edf3">of client app</text>
+  <rect x="648" y="398" width="104" height="18" rx="9" fill="#2a1010"/>
+  <text x="700" y="411" text-anchor="middle" font-size="10" font-weight="bold" fill="#f85149">✕ BLOCKED</text>
+
+  <!-- ── ESCALATION BANNER ── -->
+  <rect x="40" y="430" width="780" height="42" rx="7" fill="#2a1010" stroke="#f85149" stroke-width="1.5"/>
+  <text x="430" y="448" text-anchor="middle" font-size="12" font-weight="bold" fill="#f85149">ESCALATED — High Risk Determination</text>
+  <text x="430" y="464" text-anchor="middle" font-size="11" fill="#8b949e">ITM Lead + HR notified · Endpoint image preserved · Access to Confidential/Restricted data restricted</text>
+
+  <!-- ── LEGEND ── -->
+  <rect x="40" y="484" width="780" height="28" rx="5" fill="#161b22"/>
+  <circle cx="65" cy="498" r="5" fill="#d29922"/>
+  <text x="77" y="502" font-size="10" fill="#8b949e">Alert</text>
+  <circle cx="120" cy="498" r="5" fill="#f85149"/>
+  <text x="132" y="502" font-size="10" fill="#8b949e">Blocked</text>
+  <circle cx="185" cy="498" r="5" fill="#56d364"/>
+  <text x="197" y="502" font-size="10" fill="#8b949e">Quarantined</text>
+  <rect x="265" y="492" width="30" height="12" rx="3" fill="#1a1a2e"/>
+  <text x="281" y="502" text-anchor="middle" font-size="10" fill="#a371f7">🌙</text>
+  <text x="302" y="502" font-size="10" fill="#8b949e">After hours</text>
+  <text x="440" y="502" font-size="10" fill="#8b949e">Severity: all 7 post-trigger events rated High · 3 channels · 3 days</text>
+
+</svg>
